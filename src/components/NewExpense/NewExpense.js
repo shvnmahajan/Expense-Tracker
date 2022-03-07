@@ -14,6 +14,10 @@ const NewExpense = (props) => {
     setState("hidden-form");
   };
 
+  const cancelNewExpenseHandler = () => {
+    setState("hidden-form");
+  };
+
   const addNewExpenseClickHandler = () => {
     setState("visible-form");
   };
@@ -21,7 +25,7 @@ const NewExpense = (props) => {
   return (
     <div className="new-expense">
       {state === "visible-form" ? (
-        <ExpenseForm onSubmitExpenseData={submitExpenseDataHandler} />
+        <ExpenseForm onCancel = {cancelNewExpenseHandler} onSubmitExpenseData={submitExpenseDataHandler} />
       ) : (
         <button onClick={addNewExpenseClickHandler}>Add New Expense</button>
       )}
